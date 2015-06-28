@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quinloon's World</title>
+		<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+		<style>
+			canvas {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background: transparent;
+			}
+			#background {
+				z-index: -2;
+			}
+			#main {
+				z-index: -1;
+				transform: rotate(90deg);
+			}
+			#ship {
+				z-index: 0;
+				transform: rotate(90deg);
+			}
+			.score {
+				position: absolute;
+				top: 20px;
+				left: 25px;
+				color: #FFF;
+				font-family: 'Press Start 2P', cursive;
+				cursor: default;
+			}
+			.game-over {
+				position: absolute;
+				top: 245px;
+				left: 160px;
+				color: #FFF;
+				font-family: 'Press Start 2P', cursive;
+				font-size: 30px;
+				cursor: default;
+				display: none;
+			}
+			.game-over span {
+				font-size: 20px;
+				cursor: pointer;
+				position: relative;
+				left: 50px;
+			}
+			.game-over span:hover {
+				color: #FFF;
+			}
+			.loading {
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #FFF;
+				font-family: 'Press Start 2P', cursive;
+				font-size: 30px;
+				cursor: default;
+			}
+
+			#game-over p {
+    		padding-left: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- The canvas for the panning background -->
+		<canvas id="background" width="600" height="600">
+			Your browser does not support canvas. Please try again with a different browser.
+		</canvas>
+		<!-- The canvas for all enemy ships and bullets -->
+		<canvas id="main" width="600" height="600">
+		</canvas>
+		<!-- The canvas the ship uses (can only move up
+         one forth the screen. -->
+		<canvas id="ship" width="600" height="600">
+		</canvas>
+		<div class="score">SCORE: <span id="score"></span></div>
+		<div class="game-over" id="game-over">GAME OVER<p><span onclick="game.restart()">Restart</span></p></div>
+		<div class="loading" id="loading"><img src="imgs/loading.png"></div>
+		<script src="app.js"></script>
+	</body>
+</html>
