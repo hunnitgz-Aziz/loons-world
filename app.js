@@ -8,9 +8,7 @@
  * - levels
  * - bosses
  * - explosions / particles
- * - parallax background
- * - vectors for movement
- * - lirbraries! http://www.createjs.com/#!/CreateJS
+ * - Adding Increment Speed
  */
 
 /* RESOURCES
